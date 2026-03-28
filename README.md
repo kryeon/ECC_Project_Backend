@@ -3,3 +3,4 @@
 ![책사진](./book.jpg)
   
 * 공부 기간: 3/16 ~ 3/28
+* 관련 기술블로그: https://velog.io/@kryeon/posts
