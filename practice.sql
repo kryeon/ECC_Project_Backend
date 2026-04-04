@@ -13,3 +13,5 @@ INSERT INTO student VALUES (3, '박', NULL);
 -- 집계 함수
 SELECT SUM(age) FROM student;
 SELECT AVG(age) FROM student;
+SELECT MIN(age) FROM student;
+SELECT MAX(name) FROM student;
