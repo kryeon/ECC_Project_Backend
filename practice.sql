@@ -15,3 +15,6 @@ SELECT SUM(age) FROM student;
 SELECT AVG(age) FROM student;
 SELECT MIN(age) FROM student;
 SELECT MAX(name) FROM student;
+
+-열 추가 : ALTER TABLE
+ALTER TABLE student ADD score INTEGER;
