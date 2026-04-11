@@ -49,3 +49,20 @@ ON p.maker_id = m.maker_id;
 SELECT *
 FROM product
 CROSS JOIN maker;
+
+-- 선택 (조건)
+SELECT * FROM product WHERE price > 1000;
+
+-- 투영 (열 선택)
+SELECT product_name, price FROM product;
+
+START TRANSACTION;
+
+INSERT INTO product (product_name, maker_id, price)
+VALUES ('맥북', 'M002', 2000);
+
+-- 문제가 생겼다고 가정
+ROLLBACK;
+
+-- 정상일 경우
+-- COMMIT;
