@@ -24,3 +24,9 @@ INSERT INTO product (product_name, maker_id, price) VALUES
 ('아이폰', 'M002', 1200),
 ('그램', 'M003', 1500),
 ('에어팟', 'M002', 300);
+
+-- 가격이 1000 이상인 상품
+SELECT product_name FROM product WHERE price >= 1000
+UNION
+-- 가격이 500 이하인 상품
+SELECT product_name FROM product WHERE price <= 500;
