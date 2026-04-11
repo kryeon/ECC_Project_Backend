@@ -1,0 +1,26 @@
+-- 메이커 테이블
+CREATE TABLE maker (
+    maker_id CHAR(4) PRIMARY KEY,
+    maker_name VARCHAR(30)
+);
+
+-- 상품 테이블
+CREATE TABLE product (
+    product_id INT AUTO_INCREMENT PRIMARY KEY,
+    product_name VARCHAR(30),
+    maker_id CHAR(4),
+    price INT,
+    FOREIGN KEY (maker_id) REFERENCES maker(maker_id)
+);
+
+-- 데이터 삽입
+INSERT INTO maker VALUES
+('M001', '삼성'),
+('M002', '애플'),
+('M003', 'LG');
+
+INSERT INTO product (product_name, maker_id, price) VALUES
+('갤럭시', 'M001', 1000),
+('아이폰', 'M002', 1200),
+('그램', 'M003', 1500),
+('에어팟', 'M002', 300);
