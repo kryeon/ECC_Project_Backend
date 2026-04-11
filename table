@@ -30,3 +30,8 @@ SELECT product_name FROM product WHERE price >= 1000
 UNION
 -- 가격이 500 이하인 상품
 SELECT product_name FROM product WHERE price <= 500;
+
+-- 중복 포함
+SELECT product_name FROM product WHERE price >= 1000
+UNION ALL
+SELECT product_name FROM product WHERE price <= 500;
