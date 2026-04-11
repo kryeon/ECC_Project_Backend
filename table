@@ -35,3 +35,8 @@ SELECT product_name FROM product WHERE price <= 500;
 SELECT product_name FROM product WHERE price >= 1000
 UNION ALL
 SELECT product_name FROM product WHERE price <= 500;
+
+SELECT p.product_name, m.maker_name
+FROM product p
+INNER JOIN maker m
+ON p.maker_id = m.maker_id;
