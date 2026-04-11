@@ -40,3 +40,12 @@ SELECT p.product_name, m.maker_name
 FROM product p
 INNER JOIN maker m
 ON p.maker_id = m.maker_id;
+
+SELECT p.product_name, m.maker_name
+FROM product p
+LEFT JOIN maker m
+ON p.maker_id = m.maker_id;
+
+SELECT *
+FROM product
+CROSS JOIN maker;
