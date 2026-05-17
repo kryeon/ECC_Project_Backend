@@ -19,3 +19,9 @@ public class Member {
         this.name = name;
     }
 }
+
+public interface SpringDataJpaMemberRepository
+    extends JpaRepository<Member, Long>, MemberRepository {
+
+    Optional<Member> findByName(String name);
+}
