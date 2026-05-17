@@ -1,0 +1,14 @@
+src/main/java/hello/hellospring/
+├── domain/
+│   └── Member.java
+├── repository/
+│   ├── MemberRepository.java        (인터페이스)
+│   ├── MemoryMemberRepository.java  (메모리)
+│   ├── JdbcMemberRepository.java    (순수 JDBC)
+│   ├── JdbcTemplateMemberRepository.java
+│   └── JpaMemberRepository.java
+├── service/
+│   └── MemberService.java
+├── aop/
+│   └── TimeTraceAop.java
+└── SpringConfig.java
