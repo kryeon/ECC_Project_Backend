@@ -1,0 +1,26 @@
+// SpringConfig.java
+@Configuration
+public class SpringConfig {
+
+    // ✅ 스프링 데이터 JPA 사용 시 (권장)
+    private final MemberRepository memberRepository;
+
+    public SpringConfig(MemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
+    }
+
+    @Bean
+    public MemberService memberService() {
+        return new MemberService(memberRepository);
+    }
+
+    /*
+     * 아래처럼 단계별로 교체하면서 실습
+     *
+     * return new MemoryMemberRepository();          // 1단계
+     * return new JdbcMemberRepository(dataSource);  // 2단계
+     * return new JdbcTemplateMemberRepository(dataSource); // 3단계
+     * return new JpaMemberRepository(em);           // 4단계
+     * → 스프링 데이터 JPA는 자동 등록되므로 생략    // 5단계
+     */
+}
