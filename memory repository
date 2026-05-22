@@ -25,3 +25,14 @@ JdbcTemplateMemberRepository repo = new JdbcTemplateMemberRepository(dataSource)
 
 List<Member> members = repo.findAll();
 members.forEach(m -> System.out.println(m.getName()));
+
+// 인터페이스 선언만 하면 끝
+public interface SpringDataJpaMemberRepository
+        extends JpaRepository<Member, Long> {
+    Optional<Member> findByName(String name); // 구현 없이 자동 동작
+}
+
+// 사용
+repository.findByName("길동").ifPresent(m ->
+    System.out.println("찾음: " + m.getName())
+);
