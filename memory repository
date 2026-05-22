@@ -7,3 +7,15 @@ repo.save(member);
 repo.findByName("길동").ifPresent(m ->
     System.out.println("찾은 회원: " + m.getName())
 );
+
+MemberService service = new MemberService(new MemoryMemberRepository());
+
+Member m1 = new Member(); m1.setName("spring");
+Member m2 = new Member(); m2.setName("spring");
+
+service.join(m1);
+try {
+    service.join(m2); // 여기서 예외 발생
+} catch (IllegalStateException e) {
+    System.out.println(e.getMessage()); // "이미 존재하는 회원입니다."
+}
