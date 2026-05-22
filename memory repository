@@ -19,3 +19,9 @@ try {
 } catch (IllegalStateException e) {
     System.out.println(e.getMessage()); // "이미 존재하는 회원입니다."
 }
+
+// DataSource는 스프링이 주입해줌 (@Autowired)
+JdbcTemplateMemberRepository repo = new JdbcTemplateMemberRepository(dataSource);
+
+List<Member> members = repo.findAll();
+members.forEach(m -> System.out.println(m.getName()));
