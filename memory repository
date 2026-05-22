@@ -1,0 +1,9 @@
+MemoryMemberRepository repo = new MemoryMemberRepository();
+
+Member member = new Member();
+member.setName("길동");
+repo.save(member);
+
+repo.findByName("길동").ifPresent(m ->
+    System.out.println("찾은 회원: " + m.getName())
+);
