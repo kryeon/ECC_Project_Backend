@@ -1,0 +1,46 @@
+package com.example.coffeeapi.domain;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
+public class Coffee {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String koreanName;
+    private String englishName;
+
+    protected Coffee() {
+        // JPA 기본 생성자
+    }
+
+    public Coffee(String koreanName, String englishName) {
+        this.koreanName = koreanName;
+        this.englishName = englishName;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getKoreanName() {
+        return koreanName;
+    }
+
+    public void setKoreanName(String koreanName) {
+        this.koreanName = koreanName;
+    }
+
+    public String getEnglishName() {
+        return englishName;
+    }
+
+    public void setEnglishName(String englishName) {
+        this.englishName = englishName;
+    }
+}
